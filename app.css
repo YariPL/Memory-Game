@@ -1,0 +1,22 @@
+.main{
+  display:flex;
+  justify-content:center;
+}
+.structure{
+  display:flex;
+  flex-direction:column;
+
+  
+}
+.cardset{
+  display:flex;
+
+}
+
+.singlecard{
+  background-color:red;
+  margin:7px;
+  width:25vw;
+  height:30vh;
+  
+}
