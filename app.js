@@ -1,6 +1,3 @@
-let card = document.querySelector('.singlecard');
+let card = document.querySelector('.structure');
+console.log(card);
 
-card.addEventListener("click", function(){
-  card.style.color = "black";
-  console.log('fuck');
-});
