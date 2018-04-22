@@ -28,28 +28,29 @@ function newGame(){
 
 ////open/close cards on click
 let opened = [];
-
+let number = 0;
 function open () {
   $( '.card' ).on('click', function() {
     $( this ).addClass( 'show open' );
-    
+number++;
+	$('.moves').html(`<span>${number.valueOf()}</span>`);
+
 	opened.unshift(this);
 	if (opened.length === 2){
 		if (opened[0].firstElementChild.className === opened[1].firstElementChild.className){
 			matched();
 		} else {
-			setTimeOut(function() {
-			  setTimeout(unmatched(){
+			  setTimeout(function(){
 			   
-			  
+			  unmatched();
 		
 			},650);
 			}
-	}
+  	}
 
-      
-  });
+	});
 } 
+
 
 ////
 
@@ -74,9 +75,7 @@ function matched() {
 }
  /////unmatched cards
  
- function doSetTimeout(i) {
-  setTimeout(function() { }, 650);
-}
+ 
  
  function unmatched() {
 	for (let i=0; i < 2; i++){
@@ -111,4 +110,6 @@ document.body.onload = newGame();
 //
 
 open();
+
+
 
