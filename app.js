@@ -22,7 +22,7 @@ function newGame(){
 		[].forEach.call(cards, function(item){
 			structure.appendChild(item);
 		});
-		cards[i].classList.remove("show", "open", "match", "disabled");
+		cards[i].classList.remove("show", "open", "match");
 	}
 }
 
@@ -64,17 +64,21 @@ let match = [];
 function matched() {
   //function open/close cards
 	for (let i=0; i < 2; i++){
-    	opened[i].classList.add('match');
-        
-
+    	match.unshift(opened[i].classList.add('match'))
     }
     
     opened = [];  
-    
-  
+    let modal = document.getElementById('myModal');
+
+  if(match.length === 16){
+      console.log('help');
+          modal.style.display = "block";
+
+  }
 }
  /////unmatched cards
- 
+
+ ////
  
  
  function unmatched() {
@@ -101,15 +105,16 @@ console.log(structure);
 ///reload board on click
 $('.restart').on('click', function reload (){
   newGame();
+  number = 0;
 })
+
+
+
+open();
 
 ///new game on page load
 document.body.onload = newGame();
 
 
 //
-
-open();
-
-
 
