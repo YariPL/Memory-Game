@@ -1,3 +1,12 @@
+
+let card = document.getElementsByClassName('card');//get all cards
+let cards = [...card];// make an array of the cards
+let opened = [];
+let number = 0;
+const structure = document.querySelector('#structure');
+let match = [];
+
+
 ///shuffle function
 function shuffle(array) {
     let currentIndex = array.length, temporaryValue, randomIndex;
@@ -27,94 +36,63 @@ function newGame(){
 }
 
 ////open/close cards on click
-let opened = [];
-let number = 0;
+
 function open () {
   $( '.card' ).on('click', function() {
     $( this ).addClass( 'show open' );
-number++;
+  number++;
 	$('.moves').html(`<span>${number.valueOf()}</span>`);
 
-	opened.unshift(this);
-	if (opened.length === 2){
-		if (opened[0].firstElementChild.className === opened[1].firstElementChild.className){
+	  opened.unshift(this);
+	  if (opened.length === 2){
+	  	if (opened[0].firstElementChild.className === opened[1].firstElementChild.className){
 			matched();
-		} else {
+	  	} else {
 			  setTimeout(function(){
 			   
 			  unmatched();
 		
-			},650);
+			  },550);
 			}
   	}
 
 	});
 } 
 
-
-////
-
-
-
-
- 
 /////matched cards
-let match = [];
-
 function matched() {
-  //function open/close cards
 	for (let i=0; i < 2; i++){
     	match.unshift(opened[i].classList.add('match'))
-    }
-    
-    opened = [];  
-    let modal = document.getElementById('myModal');
-
-  if(match.length === 16){
-      console.log('help');
-          modal.style.display = "block";
-
   }
+  opened = [];  
+  let modal = document.getElementById('myModal');
+///if all matched open final screen and the number of moves
+    if(match.length === 16) {
+      modal.style.display = 'block';
+      $('.win').append(`<div class='fnumber'>You finished in ${number} moves!</div>`);
+      $('.win').append(`<div class='startButton'> Want to try again?</div><button class='button btn'>START</button>`);
+    
+      $('.btn').on('click',function() {
+        modal.style.display = "none";
+        newGame();
+
+       });
+    }
 }
  /////unmatched cards
-
- ////
- 
- 
- function unmatched() {
+function unmatched() {
 	for (let i=0; i < 2; i++){
-    	
-    	        	opened[i].classList.remove('show', 'open', 'match');
-    	
+    opened[i].classList.remove('show', 'open', 'match');
     }
     opened = [];   
 }
 
-
-
-
-//array of cards
-let card = document.getElementsByClassName('card');
-let cards = [...card];
-
-///smth
-const structure = document.querySelector('#structure');
-console.log(structure);
-
-
 ///reload board on click
 $('.restart').on('click', function reload (){
   newGame();
-  number = 0;
+  number = 0; 
+$('.moves').html(`<span>${number.valueOf()}</span>`);
 })
 
-
-
 open();
-
-///new game on page load
 document.body.onload = newGame();
-
-
-//
-
