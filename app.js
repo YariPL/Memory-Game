@@ -73,8 +73,10 @@ function matched() {
       $('.win').append(`<div class='startButton'> Want to try again?</div><button class='button btn'>START</button>`);
     
       $('.btn').on('click',function() {
-        modal.style.display = "none";
-        newGame();
+       $('.moves').text('0');
+                number = 0; 
+    newGame();
+ modal.style.display = "none";
 
        });
     }
@@ -89,8 +91,9 @@ function unmatched() {
 
 ///reload board on click
 $('.restart').on('click', function reload (){
-  newGame();
   number = 0; 
+    newGame();
+
 $('.moves').html(`<span>${number.valueOf()}</span>`);
 })
 
