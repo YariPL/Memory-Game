@@ -89,10 +89,12 @@ h1 {
     justify-content: center;
     align-items: center;
     box-shadow: 5px 2px 20px 0 #2e3d49;
+    transition-property: transform;
+    transition-duration: 800ms;
 }
 
 #structure .card.open {
-    transform: rotateY(0);
+    transform: rotateY(180deg);
     background: #1d6275;
     cursor: default;
 }
