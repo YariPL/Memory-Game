@@ -8,7 +8,7 @@ let match = [];
 const structure = document.querySelector('#structure');
 //number value for moves counter
 let number = 0;
-let starNumber = 'ALL';
+let starNumber = 'ALL stars';
 
 ///shuffle function
 function shuffle(array) {
@@ -90,7 +90,9 @@ function restart () {
 		number = 0; 
 		newGrid();
 		$('.moves').html(`<span>${number.valueOf()}</span>`);
-	})
+	
+		 		match = [];
+})
 }
 
 //counter and stars

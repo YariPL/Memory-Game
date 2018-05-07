@@ -14,7 +14,7 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    font-family:verdana;
+font-family: 'Raleway', sans-serif;
     background-color: lightblue;
 
 }
@@ -29,7 +29,6 @@ body {
 }
 
 h1 {
-    font-family: 'Open Sans', sans-serif;
     font-weight: 900;
     font-size: 4em;
 }
@@ -140,7 +139,7 @@ h1 {
     font-weight: bold;
 }
 .finallogo img {
-    width: 21vw;
+    width: 134px;
     height: 21vh;
     margin: auto;
 }
@@ -156,8 +155,9 @@ h1 {
     cursor: pointer;
     color: floralwhite;
 }
-
-
+#time{
+        margin-left: 58px;
+}
 
 .shake {   
     animation: shake 1.0s cubic-bezier(.36, .07, .19, .97) both;
