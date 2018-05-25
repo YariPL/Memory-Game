@@ -68,7 +68,7 @@ h1 {
 #structure {
     width: 95%;
     height: 300px;
-    background-color:#28788e;
+    background-color:#232323;
     padding: 32px;
     border-radius: 10px;
     box-shadow: 12px 15px 20px 0 #276069;
@@ -82,7 +82,7 @@ h1 {
 #structure .card {
     width: 21%;
     height: 21%;
-    background: #36b5f4;
+    background: #121212;
     font-size: 0;
     color: #ffffff;
     border-radius: 8px;
@@ -90,7 +90,7 @@ h1 {
     display: flex;
     justify-content: center;
     align-items: center;
-    box-shadow: 5px 2px 20px 0 #2e3d49;
+    box-shadow: 5px 2px 20px 0 #121212;
     transition-property: transform;
     transition-duration: 800ms;
 }
@@ -162,6 +162,7 @@ h1 {
 .shake {   
     animation: shake 1.0s cubic-bezier(.36, .07, .19, .97) both;
     transform: translate3d(0, 0, 0);
+    background:red;
 }
 
 @keyframes shake {
