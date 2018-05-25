@@ -15,5 +15,5 @@
   - more than 40 moves: **0,5 stars;**
  ### **Timer**
      1.Timer stars when the first card is clicked. 
-     2.Time is just for player information, **no** influence on result.
+     2.Time is just for player information, no influence on result.
  
